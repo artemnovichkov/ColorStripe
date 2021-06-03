@@ -49,11 +49,11 @@ struct DeviceView: View {
                             selection: $viewModel.state.color,
                             supportsOpacity: false)
                 HStack {
-                    Text("Mode:" + (viewModel.state.mode?.title ?? ""))
+                    Text("Mode")
                     Spacer()
-                    Button("Change Mode") {
+                    Button(viewModel.state.mode?.title ?? "Solid Color") {
                         modeSelectionIsPresented.toggle()
-                    }
+                    }.foregroundColor(.accentColor)
                 }
                 HStack {
                     Text("Speed")
