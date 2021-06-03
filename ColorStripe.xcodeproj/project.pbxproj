@@ -1,0 +1,417 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		06E66FC526665687006FB560 /* ColorStripeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E66FC426665687006FB560 /* ColorStripeApp.swift */; };
+		06E66FC926665688006FB560 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06E66FC826665688006FB560 /* Assets.xcassets */; };
+		06E66FCC26665688006FB560 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06E66FCB26665688006FB560 /* Preview Assets.xcassets */; };
+		06E66FE1266656D1006FB560 /* DeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E66FD5266656D1006FB560 /* DeviceView.swift */; };
+		06E66FE2266656D1006FB560 /* DeviceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E66FD6266656D1006FB560 /* DeviceViewModel.swift */; };
+		06E66FE3266656D1006FB560 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E66FD8266656D1006FB560 /* MainViewModel.swift */; };
+		06E66FE4266656D1006FB560 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E66FD9266656D1006FB560 /* MainView.swift */; };
+		06E66FE5266656D1006FB560 /* DevicesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E66FDB266656D1006FB560 /* DevicesViewModel.swift */; };
+		06E66FE6266656D1006FB560 /* DevicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E66FDC266656D1006FB560 /* DevicesView.swift */; };
+		06E66FE7266656D1006FB560 /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E66FDE266656D1006FB560 /* BluetoothManager.swift */; };
+		06E66FE8266656D1006FB560 /* StripeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E66FDF266656D1006FB560 /* StripeState.swift */; };
+		06E66FE9266656D1006FB560 /* StripeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E66FE0266656D1006FB560 /* StripeData.swift */; };
+		06E66FEC266663F4006FB560 /* Set+Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E66FEB266663F4006FB560 /* Set+Cancellable.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		06E66FC126665687006FB560 /* ColorStripe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorStripe.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		06E66FC426665687006FB560 /* ColorStripeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorStripeApp.swift; sourceTree = "<group>"; };
+		06E66FC826665688006FB560 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		06E66FCB26665688006FB560 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		06E66FCD26665688006FB560 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		06E66FD5266656D1006FB560 /* DeviceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceView.swift; sourceTree = "<group>"; };
+		06E66FD6266656D1006FB560 /* DeviceViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceViewModel.swift; sourceTree = "<group>"; };
+		06E66FD8266656D1006FB560 /* MainViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		06E66FD9266656D1006FB560 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		06E66FDB266656D1006FB560 /* DevicesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevicesViewModel.swift; sourceTree = "<group>"; };
+		06E66FDC266656D1006FB560 /* DevicesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevicesView.swift; sourceTree = "<group>"; };
+		06E66FDE266656D1006FB560 /* BluetoothManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluetoothManager.swift; sourceTree = "<group>"; };
+		06E66FDF266656D1006FB560 /* StripeState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StripeState.swift; sourceTree = "<group>"; };
+		06E66FE0266656D1006FB560 /* StripeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StripeData.swift; sourceTree = "<group>"; };
+		06E66FEB266663F4006FB560 /* Set+Cancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Set+Cancellable.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		06E66FBE26665687006FB560 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		06E66FB826665687006FB560 = {
+			isa = PBXGroup;
+			children = (
+				06E66FC326665687006FB560 /* ColorStripe */,
+				06E66FC226665687006FB560 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		06E66FC226665687006FB560 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				06E66FC126665687006FB560 /* ColorStripe.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		06E66FC326665687006FB560 /* ColorStripe */ = {
+			isa = PBXGroup;
+			children = (
+				06E66FC426665687006FB560 /* ColorStripeApp.swift */,
+				06E66FD3266656D1006FB560 /* Views */,
+				06E66FDD266656D1006FB560 /* Models */,
+				06E66FEA266663EA006FB560 /* Extensions */,
+				06E66FC826665688006FB560 /* Assets.xcassets */,
+				06E66FCD26665688006FB560 /* Info.plist */,
+				06E66FCA26665688006FB560 /* Preview Content */,
+			);
+			path = ColorStripe;
+			sourceTree = "<group>";
+		};
+		06E66FCA26665688006FB560 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				06E66FCB26665688006FB560 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		06E66FD3266656D1006FB560 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				06E66FD7266656D1006FB560 /* Main */,
+				06E66FDA266656D1006FB560 /* Devices */,
+				06E66FD4266656D1006FB560 /* Device */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		06E66FD4266656D1006FB560 /* Device */ = {
+			isa = PBXGroup;
+			children = (
+				06E66FD5266656D1006FB560 /* DeviceView.swift */,
+				06E66FD6266656D1006FB560 /* DeviceViewModel.swift */,
+			);
+			path = Device;
+			sourceTree = "<group>";
+		};
+		06E66FD7266656D1006FB560 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				06E66FD9266656D1006FB560 /* MainView.swift */,
+				06E66FD8266656D1006FB560 /* MainViewModel.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		06E66FDA266656D1006FB560 /* Devices */ = {
+			isa = PBXGroup;
+			children = (
+				06E66FDC266656D1006FB560 /* DevicesView.swift */,
+				06E66FDB266656D1006FB560 /* DevicesViewModel.swift */,
+			);
+			path = Devices;
+			sourceTree = "<group>";
+		};
+		06E66FDD266656D1006FB560 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				06E66FDE266656D1006FB560 /* BluetoothManager.swift */,
+				06E66FDF266656D1006FB560 /* StripeState.swift */,
+				06E66FE0266656D1006FB560 /* StripeData.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		06E66FEA266663EA006FB560 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				06E66FEB266663F4006FB560 /* Set+Cancellable.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		06E66FC026665687006FB560 /* ColorStripe */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 06E66FD026665688006FB560 /* Build configuration list for PBXNativeTarget "ColorStripe" */;
+			buildPhases = (
+				06E66FBD26665687006FB560 /* Sources */,
+				06E66FBE26665687006FB560 /* Frameworks */,
+				06E66FBF26665687006FB560 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ColorStripe;
+			productName = ColorStripe;
+			productReference = 06E66FC126665687006FB560 /* ColorStripe.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		06E66FB926665687006FB560 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					06E66FC026665687006FB560 = {
+						CreatedOnToolsVersion = 12.5;
+					};
+				};
+			};
+			buildConfigurationList = 06E66FBC26665687006FB560 /* Build configuration list for PBXProject "ColorStripe" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 06E66FB826665687006FB560;
+			productRefGroup = 06E66FC226665687006FB560 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				06E66FC026665687006FB560 /* ColorStripe */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		06E66FBF26665687006FB560 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06E66FCC26665688006FB560 /* Preview Assets.xcassets in Resources */,
+				06E66FC926665688006FB560 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		06E66FBD26665687006FB560 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06E66FE3266656D1006FB560 /* MainViewModel.swift in Sources */,
+				06E66FE4266656D1006FB560 /* MainView.swift in Sources */,
+				06E66FE6266656D1006FB560 /* DevicesView.swift in Sources */,
+				06E66FE2266656D1006FB560 /* DeviceViewModel.swift in Sources */,
+				06E66FE5266656D1006FB560 /* DevicesViewModel.swift in Sources */,
+				06E66FC526665687006FB560 /* ColorStripeApp.swift in Sources */,
+				06E66FEC266663F4006FB560 /* Set+Cancellable.swift in Sources */,
+				06E66FE7266656D1006FB560 /* BluetoothManager.swift in Sources */,
+				06E66FE9266656D1006FB560 /* StripeData.swift in Sources */,
+				06E66FE8266656D1006FB560 /* StripeState.swift in Sources */,
+				06E66FE1266656D1006FB560 /* DeviceView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		06E66FCE26665688006FB560 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		06E66FCF26665688006FB560 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		06E66FD126665688006FB560 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"ColorStripe/Preview Content\"";
+				DEVELOPMENT_TEAM = 79RZ866842;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = ColorStripe/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.artemnovichkov.ColorStripe;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		06E66FD226665688006FB560 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"ColorStripe/Preview Content\"";
+				DEVELOPMENT_TEAM = 79RZ866842;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = ColorStripe/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.artemnovichkov.ColorStripe;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		06E66FBC26665687006FB560 /* Build configuration list for PBXProject "ColorStripe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				06E66FCE26665688006FB560 /* Debug */,
+				06E66FCF26665688006FB560 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		06E66FD026665688006FB560 /* Build configuration list for PBXNativeTarget "ColorStripe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				06E66FD126665688006FB560 /* Debug */,
+				06E66FD226665688006FB560 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 06E66FB926665687006FB560 /* Project object */;
+}
