@@ -3,8 +3,8 @@
 An experiment app for RGB stripe control. Written in SwiftUI+Combine. Read about dev journey in [my blog](https://blog.artemnovichkov.com/bluetooth-and-swiftui).
 
 <p align="center"/>
-  <img src=".github/screenshot_1.png" width="45%"/>
-  <img src=".github/screenshot_2.png" width="45%"/>
+  <img src=".github/screenshot_1.PNG" width="45%"/>
+  <img src=".github/screenshot_2.PNG" width="45%"/>
 </p>
 
 
