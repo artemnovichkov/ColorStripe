@@ -21,14 +21,15 @@ final class DeviceViewModel: ObservableObject {
     private lazy var manager: BluetoothManager = .shared
     private lazy var cancellables: Set<AnyCancellable> = .init()
 
-    private let peripheral: CBPeripheral
+    private let peripheralModel: PeripheralModel
+    private var peripheral: CBPeripheral?
     private var readCharacteristic: CBCharacteristic?
     private var writeCharacteristic: CBCharacteristic?
 
     //MARK: - Lifecycle
 
-    init(peripheral: CBPeripheral) {
-        self.peripheral = peripheral
+    init(peripheral: PeripheralModel) {
+        self.peripheralModel = peripheral
     }
 
     deinit {
@@ -36,33 +37,42 @@ final class DeviceViewModel: ObservableObject {
     }
 
     func connect() {
-        manager.servicesSubject
-            .map { $0.filter { Constants.serviceUUIDs.contains($0.uuid) } }
-            .sink { [weak self] services in
-                services.forEach { service in
-                    self?.peripheral.discoverCharacteristics(nil, for: service)
-                }
+        manager.peripheralSubject
+            .filter { [weak self] in $0.identifier == self?.peripheralModel.id }
+            .sink {
+                [weak self] peripheral in
+                guard let self = self else { return }
+                self.peripheral = peripheral
+                
+                self.manager.servicesSubject
+                    .map { $0.filter { Constants.serviceUUIDs.contains($0.uuid) } }
+                    .sink { services in
+                        services.forEach { service in
+                            peripheral.discoverCharacteristics(nil, for: service)
+                        }
+                    }
+                    .store(in: &self.cancellables)
+                
+                self.manager.characteristicsSubject
+                    .filter { $0.0.uuid == Constants.readServiceUUID }
+                    .compactMap { $0.1.first(where: \.uuid == Constants.readCharacteristicUUID) }
+                    .sink { [weak self] characteristic in
+                        self?.readCharacteristic = characteristic
+                        self?.update(StripeData.state(from: characteristic.value))
+                    }
+                    .store(in: &self.cancellables)
+                
+                self.manager.characteristicsSubject
+                    .filter { $0.0.uuid == Constants.writeServiceUUID }
+                    .compactMap { $0.1.first(where: \.uuid == Constants.writeCharacteristicUUID) }
+                    .sink { [weak self] characteristic in
+                        self?.writeCharacteristic = characteristic
+                    }
+                    .store(in: &self.cancellables)
+                
+                self.manager.connect(peripheral)
             }
             .store(in: &cancellables)
-
-        manager.characteristicsSubject
-            .filter { $0.0.uuid == Constants.readServiceUUID }
-            .compactMap { $0.1.first(where: \.uuid == Constants.readCharacteristicUUID) }
-            .sink { [weak self] characteristic in
-                self?.readCharacteristic = characteristic
-                self?.update(StripeData.state(from: characteristic.value))
-            }
-            .store(in: &cancellables)
-
-        manager.characteristicsSubject
-            .filter { $0.0.uuid == Constants.writeServiceUUID }
-            .compactMap { $0.1.first(where: \.uuid == Constants.writeCharacteristicUUID) }
-            .sink { [weak self] characteristic in
-                self?.writeCharacteristic = characteristic
-            }
-            .store(in: &cancellables)
-
-        manager.connect(peripheral)
     }
 
     private func update(_ state: StripeState) {
@@ -89,7 +99,7 @@ final class DeviceViewModel: ObservableObject {
         guard let characteristic = writeCharacteristic else {
             return
         }
-        peripheral.writeValue(data, for: characteristic, type: .withoutResponse)
+        peripheral?.writeValue(data, for: characteristic, type: .withoutResponse)
     }
 }
 

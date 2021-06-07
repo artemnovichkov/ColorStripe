@@ -13,7 +13,7 @@ struct DeviceView: View {
 
     //MARK: - Lifecycle
     
-    init(peripheral: CBPeripheral) {
+    init(peripheral: PeripheralModel) {
         let viewModel = DeviceViewModel(peripheral: peripheral)
         _viewModel = .init(wrappedValue: viewModel)
     }
@@ -55,14 +55,23 @@ struct DeviceView: View {
                         modeSelectionIsPresented.toggle()
                     }.foregroundColor(.accentColor)
                 }
-                HStack {
-                    Text("Speed")
-                    Slider(value: $viewModel.state.speed, in: 0...1)
+                if let _ = viewModel.state.mode {
+                    HStack {
+                        Text("Speed")
+                        Slider(value: $viewModel.state.speed, in: 0...1, step: 0.05)
+                    }
                 }
             }
         }
         else {
             Text("Connecting...")
         }
+    }
+}
+
+struct DeviceView_Previews: PreviewProvider {
+    static var previews: some View {
+        DeviceView(peripheral: .init(id: UUID(),
+                                     name: "Generic LED"))
     }
 }

@@ -14,7 +14,7 @@ final class MainViewModel: ObservableObject {
         }
     }
     @AppStorage("identifier") private var identifier: String = ""
-    @Published var peripheral: CBPeripheral?
+    @Published var peripheral: PeripheralModel?
 
     private lazy var manager: BluetoothManager = .shared
     private lazy var cancellables: Set<AnyCancellable> = .init()
@@ -44,7 +44,7 @@ final class MainViewModel: ObservableObject {
         }
         manager.peripheralSubject
             .filter { $0.identifier == UUID(uuidString: self.identifier) }
-            .sink { [weak self] in self?.peripheral = $0 }
+            .sink { [weak self] in self?.peripheral = .init(id: $0.identifier, name: $0.name) }
             .store(in: &cancellables)
         manager.scan()
     }

@@ -20,6 +20,8 @@
 		06E66FE8266656D1006FB560 /* StripeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E66FDF266656D1006FB560 /* StripeState.swift */; };
 		06E66FE9266656D1006FB560 /* StripeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E66FE0266656D1006FB560 /* StripeData.swift */; };
 		06E66FEC266663F4006FB560 /* Set+Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E66FEB266663F4006FB560 /* Set+Cancellable.swift */; };
+		8D5E03A4266963650030A2FD /* PeripheralModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5E03A3266963650030A2FD /* PeripheralModel.swift */; };
+		8D5E03A62669657C0030A2FD /* Array+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5E03A52669657C0030A2FD /* Array+Convenience.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		06E66FDF266656D1006FB560 /* StripeState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StripeState.swift; sourceTree = "<group>"; };
 		06E66FE0266656D1006FB560 /* StripeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StripeData.swift; sourceTree = "<group>"; };
 		06E66FEB266663F4006FB560 /* Set+Cancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Set+Cancellable.swift"; sourceTree = "<group>"; };
+		8D5E03A3266963650030A2FD /* PeripheralModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralModel.swift; sourceTree = "<group>"; };
+		8D5E03A52669657C0030A2FD /* Array+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Convenience.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +126,7 @@
 			children = (
 				06E66FDC266656D1006FB560 /* DevicesView.swift */,
 				06E66FDB266656D1006FB560 /* DevicesViewModel.swift */,
+				8D5E03A3266963650030A2FD /* PeripheralModel.swift */,
 			);
 			path = Devices;
 			sourceTree = "<group>";
@@ -140,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				06E66FEB266663F4006FB560 /* Set+Cancellable.swift */,
+				8D5E03A52669657C0030A2FD /* Array+Convenience.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -218,6 +224,8 @@
 				06E66FE6266656D1006FB560 /* DevicesView.swift in Sources */,
 				06E66FE2266656D1006FB560 /* DeviceViewModel.swift in Sources */,
 				06E66FE5266656D1006FB560 /* DevicesViewModel.swift in Sources */,
+				8D5E03A62669657C0030A2FD /* Array+Convenience.swift in Sources */,
+				8D5E03A4266963650030A2FD /* PeripheralModel.swift in Sources */,
 				06E66FC526665687006FB560 /* ColorStripeApp.swift in Sources */,
 				06E66FEC266663F4006FB560 /* Set+Cancellable.swift in Sources */,
 				06E66FE7266656D1006FB560 /* BluetoothManager.swift in Sources */,
