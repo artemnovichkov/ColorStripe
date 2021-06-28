@@ -44,9 +44,9 @@ final class DevicesViewModel<Manager: ManagerWrapper>: ObservableObject {
 //            .sink { [weak self] in
 //                self?.peripherals.insertSorted($0)
 //            }
-//            .filter { [weak self] newPeripheral in self?.peripherals.contains(where: { peripheral in
-//                newPeripheral.identifier != peripheral.identifier
-//            }) ?? false }
+            .filter { [weak self] newPeripheral in self?.peripherals.contains(where: { peripheral in
+                newPeripheral.identifier == peripheral.identifier
+            }) == false}
             .sink { [weak self] in
                 self?.peripherals.append($0)
             }
