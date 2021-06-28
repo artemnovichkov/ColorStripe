@@ -34,7 +34,6 @@
 		8D5488B52689D45D0064760F /* CBPeripheral+Wrapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5488B42689D45D0064760F /* CBPeripheral+Wrapping.swift */; };
 		8D5488B72689D57D0064760F /* CBService+Wrapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5488B62689D57D0064760F /* CBService+Wrapping.swift */; };
 		8D5488B92689D5A00064760F /* CBCharacteristic+Wrapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5488B82689D5A00064760F /* CBCharacteristic+Wrapping.swift */; };
-		8D5E03A4266963650030A2FD /* PeripheralModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5E03A3266963650030A2FD /* PeripheralModel.swift */; };
 		8D5E03A62669657C0030A2FD /* Array+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5E03A52669657C0030A2FD /* Array+Convenience.swift */; };
 		8DC25A742689FD1800B6F798 /* MockBluetoothProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC25A732689FD1800B6F798 /* MockBluetoothProvider.swift */; };
 /* End PBXBuildFile section */
@@ -69,7 +68,6 @@
 		8D5488B42689D45D0064760F /* CBPeripheral+Wrapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CBPeripheral+Wrapping.swift"; sourceTree = "<group>"; };
 		8D5488B62689D57D0064760F /* CBService+Wrapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CBService+Wrapping.swift"; sourceTree = "<group>"; };
 		8D5488B82689D5A00064760F /* CBCharacteristic+Wrapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CBCharacteristic+Wrapping.swift"; sourceTree = "<group>"; };
-		8D5E03A3266963650030A2FD /* PeripheralModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralModel.swift; sourceTree = "<group>"; };
 		8D5E03A52669657C0030A2FD /* Array+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Convenience.swift"; sourceTree = "<group>"; };
 		8DC25A732689FD1800B6F798 /* MockBluetoothProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBluetoothProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -157,7 +155,6 @@
 			children = (
 				06E66FDC266656D1006FB560 /* DevicesView.swift */,
 				06E66FDB266656D1006FB560 /* DevicesViewModel.swift */,
-				8D5E03A3266963650030A2FD /* PeripheralModel.swift */,
 			);
 			path = Devices;
 			sourceTree = "<group>";
@@ -305,7 +302,6 @@
 				8D5488AA2689BD350064760F /* CBCentralManager+Wrapping.swift in Sources */,
 				8D5488B12689CB920064760F /* MockManager.swift in Sources */,
 				8D5488B72689D57D0064760F /* CBService+Wrapping.swift in Sources */,
-				8D5E03A4266963650030A2FD /* PeripheralModel.swift in Sources */,
 				8D1C4F3E2689AF7200CF3D9B /* ManagerState.swift in Sources */,
 				06E66FC526665687006FB560 /* ColorStripeApp.swift in Sources */,
 				06E66FEC266663F4006FB560 /* Set+Cancellable.swift in Sources */,
