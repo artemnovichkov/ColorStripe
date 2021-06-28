@@ -36,6 +36,7 @@
 		8D5488B92689D5A00064760F /* CBCharacteristic+Wrapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5488B82689D5A00064760F /* CBCharacteristic+Wrapping.swift */; };
 		8D5E03A4266963650030A2FD /* PeripheralModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5E03A3266963650030A2FD /* PeripheralModel.swift */; };
 		8D5E03A62669657C0030A2FD /* Array+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5E03A52669657C0030A2FD /* Array+Convenience.swift */; };
+		8DC25A742689FD1800B6F798 /* MockBluetoothProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC25A732689FD1800B6F798 /* MockBluetoothProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		8D5488B82689D5A00064760F /* CBCharacteristic+Wrapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CBCharacteristic+Wrapping.swift"; sourceTree = "<group>"; };
 		8D5E03A3266963650030A2FD /* PeripheralModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralModel.swift; sourceTree = "<group>"; };
 		8D5E03A52669657C0030A2FD /* Array+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Convenience.swift"; sourceTree = "<group>"; };
+		8DC25A732689FD1800B6F798 /* MockBluetoothProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBluetoothProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 			children = (
 				06E66FDE266656D1006FB560 /* BluetoothProviderWrapper.swift */,
 				8D5488AD2689C9D60064760F /* BluetoothProvider.swift */,
+				8DC25A732689FD1800B6F798 /* MockBluetoothProvider.swift */,
 				06E66FDF266656D1006FB560 /* StripeState.swift */,
 				06E66FE0266656D1006FB560 /* StripeData.swift */,
 			);
@@ -286,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				06E66FE3266656D1006FB560 /* MainViewModel.swift in Sources */,
+				8DC25A742689FD1800B6F798 /* MockBluetoothProvider.swift in Sources */,
 				8D5488AC2689BEDB0064760F /* PeripheralDelegateWrapper.swift in Sources */,
 				06E66FE4266656D1006FB560 /* MainView.swift in Sources */,
 				06E66FE6266656D1006FB560 /* DevicesView.swift in Sources */,
