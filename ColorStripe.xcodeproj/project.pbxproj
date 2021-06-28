@@ -28,6 +28,8 @@
 		8D1C4F482689B9A600CF3D9B /* CharacteristicWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1C4F472689B9A600CF3D9B /* CharacteristicWrapper.swift */; };
 		8D5488AA2689BD350064760F /* CBCentralManager+Wrapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5488A92689BD350064760F /* CBCentralManager+Wrapping.swift */; };
 		8D5488AC2689BEDB0064760F /* PeripheralDelegateWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5488AB2689BEDB0064760F /* PeripheralDelegateWrapper.swift */; };
+		8D5488B12689CB920064760F /* MockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5488B02689CB920064760F /* MockManager.swift */; };
+		8D5488B32689CC630064760F /* MockPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5488B22689CC630064760F /* MockPeripheral.swift */; };
 		8D5488B52689D45D0064760F /* CBPeripheral+Wrapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5488B42689D45D0064760F /* CBPeripheral+Wrapping.swift */; };
 		8D5488B72689D57D0064760F /* CBService+Wrapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5488B62689D57D0064760F /* CBService+Wrapping.swift */; };
 		8D5488B92689D5A00064760F /* CBCharacteristic+Wrapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5488B82689D5A00064760F /* CBCharacteristic+Wrapping.swift */; };
@@ -59,6 +61,8 @@
 		8D1C4F472689B9A600CF3D9B /* CharacteristicWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacteristicWrapper.swift; sourceTree = "<group>"; };
 		8D5488A92689BD350064760F /* CBCentralManager+Wrapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CBCentralManager+Wrapping.swift"; sourceTree = "<group>"; };
 		8D5488AB2689BEDB0064760F /* PeripheralDelegateWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralDelegateWrapper.swift; sourceTree = "<group>"; };
+		8D5488B02689CB920064760F /* MockManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockManager.swift; sourceTree = "<group>"; };
+		8D5488B22689CC630064760F /* MockPeripheral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPeripheral.swift; sourceTree = "<group>"; };
 		8D5488B42689D45D0064760F /* CBPeripheral+Wrapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CBPeripheral+Wrapping.swift"; sourceTree = "<group>"; };
 		8D5488B62689D57D0064760F /* CBService+Wrapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CBService+Wrapping.swift"; sourceTree = "<group>"; };
 		8D5488B82689D5A00064760F /* CBCharacteristic+Wrapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CBCharacteristic+Wrapping.swift"; sourceTree = "<group>"; };
@@ -176,6 +180,7 @@
 		8D1C4F3C2689AF6600CF3D9B /* CoreBluetooth Wrapping */ = {
 			isa = PBXGroup;
 			children = (
+				8D5488AF2689CB7E0064760F /* Mocks */,
 				8D1C4F472689B9A600CF3D9B /* CharacteristicWrapper.swift */,
 				8D5488A82689BCFB0064760F /* Extensions */,
 				8D1C4F432689B1AF00CF3D9B /* ManagerDelegateWrapper.swift */,
@@ -197,6 +202,15 @@
 				8D5488B82689D5A00064760F /* CBCharacteristic+Wrapping.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8D5488AF2689CB7E0064760F /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				8D5488B02689CB920064760F /* MockManager.swift */,
+				8D5488B22689CC630064760F /* MockPeripheral.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +287,7 @@
 				06E66FE4266656D1006FB560 /* MainView.swift in Sources */,
 				06E66FE6266656D1006FB560 /* DevicesView.swift in Sources */,
 				8D1C4F422689B18D00CF3D9B /* ManagerWrapper.swift in Sources */,
+				8D5488B32689CC630064760F /* MockPeripheral.swift in Sources */,
 				06E66FE2266656D1006FB560 /* DeviceViewModel.swift in Sources */,
 				8D1C4F462689B99300CF3D9B /* ServiceWrapper.swift in Sources */,
 				8D1C4F482689B9A600CF3D9B /* CharacteristicWrapper.swift in Sources */,
@@ -281,6 +296,7 @@
 				8D5E03A62669657C0030A2FD /* Array+Convenience.swift in Sources */,
 				8D5488B92689D5A00064760F /* CBCharacteristic+Wrapping.swift in Sources */,
 				8D5488AA2689BD350064760F /* CBCentralManager+Wrapping.swift in Sources */,
+				8D5488B12689CB920064760F /* MockManager.swift in Sources */,
 				8D5488B72689D57D0064760F /* CBService+Wrapping.swift in Sources */,
 				8D5E03A4266963650030A2FD /* PeripheralModel.swift in Sources */,
 				8D1C4F3E2689AF7200CF3D9B /* ManagerState.swift in Sources */,
