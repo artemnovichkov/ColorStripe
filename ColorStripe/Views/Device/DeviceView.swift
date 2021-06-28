@@ -13,7 +13,7 @@ struct DeviceView: View {
 
     //MARK: - Lifecycle
     
-    init(peripheral: PeripheralModel) {
+    init(peripheral: PeripheralWrapper) {
         let viewModel = DeviceViewModel(peripheral: peripheral)
         _viewModel = .init(wrappedValue: viewModel)
     }
@@ -71,7 +71,6 @@ struct DeviceView: View {
 
 struct DeviceView_Previews: PreviewProvider {
     static var previews: some View {
-        DeviceView(peripheral: .init(id: UUID(),
-                                     name: "Generic LED"))
+        DeviceView(peripheral: MockPeripheral.triones)
     }
 }
