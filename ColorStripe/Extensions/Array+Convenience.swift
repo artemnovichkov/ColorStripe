@@ -1,7 +1,4 @@
 //
-//  Array+Convenience.swift
-//  ColorStripe
-//
 //  Created by Dorian Grolaux on 03/06/2021.
 //
 
