@@ -20,6 +20,7 @@
 		06E66FE8266656D1006FB560 /* StripeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E66FDF266656D1006FB560 /* StripeState.swift */; };
 		06E66FE9266656D1006FB560 /* StripeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E66FE0266656D1006FB560 /* StripeData.swift */; };
 		06E66FEC266663F4006FB560 /* Set+Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E66FEB266663F4006FB560 /* Set+Cancellable.swift */; };
+		8D1C4F3E2689AF7200CF3D9B /* ManagerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1C4F3D2689AF7200CF3D9B /* ManagerState.swift */; };
 		8D5E03A4266963650030A2FD /* PeripheralModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5E03A3266963650030A2FD /* PeripheralModel.swift */; };
 		8D5E03A62669657C0030A2FD /* Array+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5E03A52669657C0030A2FD /* Array+Convenience.swift */; };
 /* End PBXBuildFile section */
@@ -40,6 +41,7 @@
 		06E66FDF266656D1006FB560 /* StripeState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StripeState.swift; sourceTree = "<group>"; };
 		06E66FE0266656D1006FB560 /* StripeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StripeData.swift; sourceTree = "<group>"; };
 		06E66FEB266663F4006FB560 /* Set+Cancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Set+Cancellable.swift"; sourceTree = "<group>"; };
+		8D1C4F3D2689AF7200CF3D9B /* ManagerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerState.swift; sourceTree = "<group>"; };
 		8D5E03A3266963650030A2FD /* PeripheralModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralModel.swift; sourceTree = "<group>"; };
 		8D5E03A52669657C0030A2FD /* Array+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Convenience.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -74,13 +76,14 @@
 		06E66FC326665687006FB560 /* ColorStripe */ = {
 			isa = PBXGroup;
 			children = (
-				06E66FC426665687006FB560 /* ColorStripeApp.swift */,
-				06E66FD3266656D1006FB560 /* Views */,
-				06E66FDD266656D1006FB560 /* Models */,
-				06E66FEA266663EA006FB560 /* Extensions */,
 				06E66FC826665688006FB560 /* Assets.xcassets */,
+				8D1C4F3C2689AF6600CF3D9B /* CoreBluetooth Wrapping */,
+				06E66FC426665687006FB560 /* ColorStripeApp.swift */,
+				06E66FEA266663EA006FB560 /* Extensions */,
 				06E66FCD26665688006FB560 /* Info.plist */,
+				06E66FDD266656D1006FB560 /* Models */,
 				06E66FCA26665688006FB560 /* Preview Content */,
+				06E66FD3266656D1006FB560 /* Views */,
 			);
 			path = ColorStripe;
 			sourceTree = "<group>";
@@ -148,6 +151,14 @@
 				8D5E03A52669657C0030A2FD /* Array+Convenience.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8D1C4F3C2689AF6600CF3D9B /* CoreBluetooth Wrapping */ = {
+			isa = PBXGroup;
+			children = (
+				8D1C4F3D2689AF7200CF3D9B /* ManagerState.swift */,
+			);
+			path = "CoreBluetooth Wrapping";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,6 +237,7 @@
 				06E66FE5266656D1006FB560 /* DevicesViewModel.swift in Sources */,
 				8D5E03A62669657C0030A2FD /* Array+Convenience.swift in Sources */,
 				8D5E03A4266963650030A2FD /* PeripheralModel.swift in Sources */,
+				8D1C4F3E2689AF7200CF3D9B /* ManagerState.swift in Sources */,
 				06E66FC526665687006FB560 /* ColorStripeApp.swift in Sources */,
 				06E66FEC266663F4006FB560 /* Set+Cancellable.swift in Sources */,
 				06E66FE7266656D1006FB560 /* BluetoothManager.swift in Sources */,
