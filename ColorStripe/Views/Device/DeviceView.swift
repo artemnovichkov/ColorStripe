@@ -3,7 +3,6 @@
 //
 
 import SwiftUI
-import CoreBluetooth
 
 struct DeviceView: View {
     
