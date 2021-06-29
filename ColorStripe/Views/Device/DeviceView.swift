@@ -55,7 +55,7 @@ struct DeviceView: View {
                         modeSelectionIsPresented.toggle()
                     }.foregroundColor(.accentColor)
                 }
-                if let _ = viewModel.state.mode {
+                if viewModel.state.mode != nil {
                     HStack {
                         Text("Speed")
                         Slider(value: $viewModel.state.speed, in: 0...1, step: 0.05)
