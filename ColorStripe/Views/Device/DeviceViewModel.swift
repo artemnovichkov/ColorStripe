@@ -18,16 +18,16 @@ final class DeviceViewModel: ObservableObject {
         static let writeCharacteristicUUID: CBUUID = .init(string: "FFD9")
     }
 
-    private lazy var manager: BluetoothManager = .shared
+    private lazy var manager: BluetoothProviderWrapper = BluetoothProvider.shared
     private lazy var cancellables: Set<AnyCancellable> = .init()
 
-    private let peripheral: CBPeripheral
-    private var readCharacteristic: CBCharacteristic?
-    private var writeCharacteristic: CBCharacteristic?
+    private var peripheral: PeripheralWrapper
+    private var readCharacteristic: CharacteristicWrapper?
+    private var writeCharacteristic: CharacteristicWrapper?
 
     //MARK: - Lifecycle
 
-    init(peripheral: CBPeripheral) {
+    init(peripheral: PeripheralWrapper) {
         self.peripheral = peripheral
     }
 
@@ -40,11 +40,11 @@ final class DeviceViewModel: ObservableObject {
             .map { $0.filter { Constants.serviceUUIDs.contains($0.uuid) } }
             .sink { [weak self] services in
                 services.forEach { service in
-                    self?.peripheral.discoverCharacteristics(nil, for: service)
+                    self?.peripheral.discoverCharacteristicsWrapper(nil, for: service)
                 }
             }
             .store(in: &cancellables)
-
+        
         manager.characteristicsSubject
             .filter { $0.0.uuid == Constants.readServiceUUID }
             .compactMap { $0.1.first(where: \.uuid == Constants.readCharacteristicUUID) }
@@ -53,7 +53,7 @@ final class DeviceViewModel: ObservableObject {
                 self?.update(StripeData.state(from: characteristic.value))
             }
             .store(in: &cancellables)
-
+        
         manager.characteristicsSubject
             .filter { $0.0.uuid == Constants.writeServiceUUID }
             .compactMap { $0.1.first(where: \.uuid == Constants.writeCharacteristicUUID) }
@@ -61,7 +61,7 @@ final class DeviceViewModel: ObservableObject {
                 self?.writeCharacteristic = characteristic
             }
             .store(in: &cancellables)
-
+        
         manager.connect(peripheral)
     }
 
@@ -89,7 +89,7 @@ final class DeviceViewModel: ObservableObject {
         guard let characteristic = writeCharacteristic else {
             return
         }
-        peripheral.writeValue(data, for: characteristic, type: .withoutResponse)
+        peripheral.writeValueWrapper(data, for: characteristic)
     }
 }
 

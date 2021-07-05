@@ -5,25 +5,23 @@
 import SwiftUI
 import CoreBluetooth
 
-struct DevicesView: View {
+struct DevicesView<T: ManagerWrapper>: View {
     
-    @StateObject private var viewModel: DevicesViewModel = .init()
-    @Binding var peripheral: CBPeripheral?
+    @StateObject private var viewModel: DevicesViewModel<T>
+    @Binding var peripheral: PeripheralWrapper?
     @Environment(\.presentationMode) private var presentationMode
     
-    private var peripherals: [CBPeripheral] {
-        viewModel.peripherals.sorted { left, right in
-            guard let leftName = left.name else {
-                return false
-            }
-            guard let rightName = right.name else {
-                return true
-            }
-            return leftName < rightName
-        }
+    //MARK: - Lifecycle
+    
+    init(peripheral: Binding<PeripheralWrapper?>, viewModel: DevicesViewModel<T>) {
+        self._peripheral = peripheral
+        self._viewModel = .init(wrappedValue: viewModel)
     }
     
-    //MARK: - Lifecycle
+    init(peripheral: Binding<PeripheralWrapper?>) where T == CentralManagerWrapper {
+        self._peripheral = peripheral
+        self._viewModel = .init(wrappedValue: .init())
+    }
     
     var body: some View {
         NavigationView {
@@ -40,7 +38,7 @@ struct DevicesView: View {
     @ViewBuilder
     private var contentView: some View {
         if viewModel.state == .poweredOn {
-            List(peripherals, id: \.identifier) { peripheral in
+            List(viewModel.peripherals, id: \.identifier) { peripheral in
                 HStack {
                     if let peripheralName = peripheral.name {
                         Text(peripheralName)
@@ -68,6 +66,7 @@ struct DevicesView: View {
 
 struct DevicesView_Previews: PreviewProvider {
     static var previews: some View {
-        DevicesView(peripheral: .constant(nil))
+        DevicesView(peripheral: .constant(MockPeripheral.triones),
+                    viewModel: .init(manager: MockBluetoothProvider.shared))
     }
 }

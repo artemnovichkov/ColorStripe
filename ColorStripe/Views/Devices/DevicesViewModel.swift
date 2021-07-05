@@ -6,16 +6,24 @@ import SwiftUI
 import CoreBluetooth
 import Combine
 
-final class DevicesViewModel: ObservableObject {
+final class DevicesViewModel<Manager: ManagerWrapper>: ObservableObject {
     
     @AppStorage("identifier") var identifier: String = ""
-    @Published var state: CBManagerState = .unknown
-    @Published var peripherals: [CBPeripheral] = []
+    @Published var state: ManagerState = .unknown
+    @Published var peripherals: [PeripheralWrapper] = []
 
-    private lazy var manager: BluetoothManager = .shared
+    private var manager: BluetoothProviderWrapper<Manager>
     private lazy var cancellables: Set<AnyCancellable> = .init()
 
     //MARK: - Lifecycle
+    
+    init(manager: BluetoothProviderWrapper<Manager>) {
+        self.manager = manager
+    }
+    
+    init() where Manager == CentralManagerWrapper {
+        self.manager = BluetoothProvider.shared
+    }
     
     deinit {
         cancellables.cancel()
@@ -30,12 +38,19 @@ final class DevicesViewModel: ObservableObject {
                 }
             }
             .store(in: &cancellables)
+        
         manager.peripheralSubject
-            .filter { [weak self] in self?.peripherals.contains($0) == false }
+//            .filter { [weak self] in self?.peripherals.contains($0) == false }
+//            .sink { [weak self] in
+//                self?.peripherals.insertSorted($0)
+//            }
+            .filter { [weak self] newPeripheral in self?.peripherals.contains(where: { peripheral in
+                newPeripheral.identifier == peripheral.identifier
+            }) == false}
             .sink { [weak self] in
-                print($0)
                 self?.peripherals.append($0)
             }
+            
             .store(in: &cancellables)
         manager.start()
     }

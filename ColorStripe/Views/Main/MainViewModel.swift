@@ -6,19 +6,27 @@ import SwiftUI
 import CoreBluetooth
 import Combine
 
-final class MainViewModel: ObservableObject {
+final class MainViewModel<Manager: ManagerWrapper>: ObservableObject {
 
-    @Published var state: CBManagerState = .unknown {
+    @Published var state: ManagerState = .unknown {
         didSet {
             update(with: state)
         }
     }
     @AppStorage("identifier") private var identifier: String = ""
-    @Published var peripheral: CBPeripheral?
+    @Published var peripheral: PeripheralWrapper?
 
-    private lazy var manager: BluetoothManager = .shared
+    private var manager: BluetoothProviderWrapper<Manager>
     private lazy var cancellables: Set<AnyCancellable> = .init()
 
+    init(manager: BluetoothProviderWrapper<Manager>) {
+        self.manager = manager
+    }
+    
+    init() where Manager == CentralManagerWrapper {
+        self.manager = BluetoothProvider.shared
+    }
+    
     //MARK: - Lifecycle
     
     deinit {
@@ -35,7 +43,7 @@ final class MainViewModel: ObservableObject {
 
     //MARK: - Private
     
-    private func update(with state: CBManagerState) {
+    private func update(with state: ManagerState) {
         guard peripheral == nil else {
             return
         }

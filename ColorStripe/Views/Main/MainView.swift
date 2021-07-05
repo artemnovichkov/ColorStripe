@@ -4,12 +4,20 @@
 
 import SwiftUI
 
-struct MainView: View {
+struct MainView<T: ManagerWrapper>: View {
     
-    @StateObject private var viewModel: MainViewModel = .init()
+    @StateObject private var viewModel: MainViewModel<T>
     @State private var devicesViewIsPresented = false
 
     //MARK: - Lifecycle
+    
+    init(viewModel: MainViewModel<T>) {
+        self._viewModel = .init(wrappedValue: viewModel)
+    }
+    
+    init() where T == CentralManagerWrapper {
+        self._viewModel = .init(wrappedValue: .init())
+    }
     
     var body: some View {
         NavigationView {
@@ -53,7 +61,15 @@ struct MainView: View {
 }
 
 struct MainView_Previews: PreviewProvider {
+    
+    static func provider() -> MockBluetoothProvider {
+        let provider = MockBluetoothProvider.shared
+        provider.start()
+        provider.scan()
+        return provider
+    }
+    
     static var previews: some View {
-        MainView()
+        MainView(viewModel: .init(manager: provider()))
     }
 }
